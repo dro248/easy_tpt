@@ -17,7 +17,7 @@ Java environment, finding the right utilities, and figuring out how to use the T
 more work than you bargained for. Isn't there a better way?
 
 Yes! EasyTPT does all of this for you, and wraps it up in a nice, easy-to-use
-[Docker container](https://hub.docker.com/r/dro248/easy_tpt). 🎁
+[Docker image](https://hub.docker.com/r/dro248/easy_tpt). 🎁
 
 ## How TPT Works
 ![](./tpt_diagram.svg)
