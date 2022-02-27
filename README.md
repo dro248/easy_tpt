@@ -1,5 +1,5 @@
 # EasyTPT
-Export large amounts of data from Teradata the fast & easy way.
+Export large data from Teradata the fast & easy way.
 > ℹ️ This package was written from a data engineering perspective, with the intent
 > to facilitate running one-off data exports along with building Teradata exports into a pipeline.  
 
