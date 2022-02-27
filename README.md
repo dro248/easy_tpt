@@ -34,19 +34,19 @@ TPT with your cloud storage credentials (along with some other arguments).
 
 
 ## Usage
-> This GitHub repo is for building the Docker images from scratch! If you would like to use the pre-built Docker images 
-> hosted on DockerHub, all you need to worry about is the bash scripts listed below. 
+> This GitHub repo is for building the Docker images from scratch! If you would like to use the [pre-built Docker image](https://hub.docker.com/r/dro248/easy_tpt) 
+> hosted on DockerHub, just use the bash scripts listed below. 
 
 ### One-off Exports
 EasyTPT acts like a subroutine by accepting all of your parameters as environment variables.
 Use one of the following bash scripts as a template (based on your cloud storage):
-- `run_s3_export.sh`
+- [run_s3_export.sh](./run_s3_export.sh)
 - `run_azure_export.sh` (coming soon!)
 
 ### S3
 To begin an EasyTPT export to S3:
-- Open the `run_s3_export.sh` file and fill in the placeholders with your Teradata, S3, and CSV values
-- Run the following: `bash run_s3_export.sh`
+- Open the [run_s3_export.sh](./run_s3_export.sh) file and fill in the placeholders with your Teradata, S3, and CSV values
+- Run the following in your terminal: `bash run_s3_export.sh`
 
 ### Azure
 (coming soon!)
@@ -55,22 +55,22 @@ To begin an EasyTPT export to S3:
 The following table will help you fill in the appropriate arguments:
 
 | Cloud Storage | Value                   | Required? | Description                                                                                   |
-|:-------------:|-------------------------|:---------:|-----------------------------------------------------------------------------------------------|
-|     both      | `CLOUD_STORAGE`         |    Yes    | Specifies the type of your cloud storage provider                                             |
-|     both      | `JOB_NAME`              |    Yes    | A unique name containing alphanumeric characters and no spaces (use underscores)              |
-|      S3       | `AWS_ACCESS_KEY_ID`     |    Yes    |                                                                                               |
-|      S3       | `AWS_SECRET_ACCESS_KEY` |    Yes    |                                                                                               |
-|      S3       | `S3_REGION`             |    Yes    |                                                                                               |
-|      S3       | `S3_BUCKET`             |    Yes    | Ex: 'my-s3-bucket'                                                                            |
-|      S3       | `S3_FILEPATH`           |    Yes    | Ex: 'sales/2020/'                                                                             |
-|      S3       | `S3_FILENAME`           |    Yes    | Ex: 'florida_sales.csv' (uncompressed) or 'florida_sales.csv.gz' (files gzipped individually) |
-|      S3       | `S3_DONT_SPLIT_ROWS`    |    No     | (Default: `True`) Tells TPT if it can split files in the middle of a record. (True = no)      |
-|     both      | `WRITE_TO_SINGLE_FILE`  |    No     | (Default: `False`) Tells TPT if it can write to multiple files. (False = yes)                 |
-|     both      | `SQL`                   |    Yes    | The full text of your SQL as a string (**see note below)                                      |
-|     both      | `TERADATA_DATABASE`     |    Yes    |                                                                                               |
-|     both      | `TERADATA_USER`         |    Yes    |                                                                                               |
-|     both      | `TERADATA_PASSWORD`     |    Yes    |                                                                                               |
-|     both      | `FIELD_DELIMITER`       |    No     | (Default: <code>&#124;</code>) CSV field delimiter;                                           |
+|:-------------:|-------------------------|:---------:|----------------------------------------------------------------------------------------------|
+|     both      | `CLOUD_STORAGE`         |    Yes    | Specifies the type of your cloud storage provider                                            |
+|     both      | `JOB_NAME`              |    Yes    | A unique name containing alphanumeric characters and no spaces (use underscores)             |
+|      S3       | `AWS_ACCESS_KEY_ID`     |    Yes    |                                                                                              |
+|      S3       | `AWS_SECRET_ACCESS_KEY` |    Yes    |                                                                                              |
+|      S3       | `S3_REGION`             |    Yes    |                                                                                              |
+|      S3       | `S3_BUCKET`             |    Yes    | Ex: 'my-s3-bucket'                                                                           |
+|      S3       | `S3_FILEPATH`           |    Yes    | Ex: 'sales/2020/'                                                                            |
+|      S3       | `S3_FILENAME`           |    Yes    | Ex: 'sales_2021.csv' (uncompressed) or 'sales_2021.csv.gz' (files gzipped individually)      |
+|      S3       | `S3_DONT_SPLIT_ROWS`    |    No     | (Default: `True`) Lets TPT know if it can split files in the middle of a record. (True = no) |
+|     both      | `WRITE_TO_SINGLE_FILE`  |    No     | (Default: `False`) Lets TPT know if it can write to multiple files. (False = yes)            |
+|     both      | `SQL`                   |    Yes    | The full text of your SQL as a string (\**see note below)                                     |
+|     both      | `TERADATA_DATABASE`     |    Yes    |                                                                                              |
+|     both      | `TERADATA_USER`         |    Yes    |                                                                                              |
+|     both      | `TERADATA_PASSWORD`     |    Yes    |                                                                                              |
+|     both      | `FIELD_DELIMITER`       |    No     | (Default: <code>&#124;</code>) CSV field delimiter;                                          |
 
 > ****Note from the Author**: Passing in the contents of a SQL file as an environment variable may seem ugly. 
 > In fact, the first few iterations of EasyTPT used Docker volumes. However, if you have ever needed to attach volumes 
@@ -159,4 +159,4 @@ your Teradata administrator to whitelist your IP address or grant TPT access to 
 (Alternatively, you have just forgotten to connect to your corporate VPN.)
 
 ### Q: How can I be sure that EasyTPT is secure?
-A: The code is open-source [see license](). Feel free to inspect, add, or remove any part of it. Happy coding! 
+A: The code is open-source [see license](./LICENSE). Feel free to inspect, add, or remove any part of it. Happy coding! 
