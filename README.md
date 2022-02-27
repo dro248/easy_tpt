@@ -39,16 +39,16 @@ TPT with your cloud storage credentials (along with some other arguments).
 
 ### One-off Exports
 EasyTPT acts like a subroutine by accepting all of your parameters as environment variables.
-Use following bash scripts as templates (based on your cloud storage):
+Use one of the following bash scripts as a template (based on your cloud storage):
 - `run_s3_export.sh`
 - `run_azure_export.sh` (coming soon!)
 
-### S3 Example
+### S3
 To begin an EasyTPT export to S3:
 - Open the `run_s3_export.sh` file and fill in the placeholders with your Teradata, S3, and CSV values
 - Run the following: `bash run_s3_export.sh`
 
-### Azure Example
+### Azure
 (coming soon!)
 
 ### Parameter Descriptions
