@@ -1,0 +1,15 @@
+TargetTdpId = '{{ teradata_database }}'
+,TargetMaxSessions = 20
+,TargetUserName = '{{ teradata_user }}'
+,TargetUserPassword = '{{ teradata_password }}'
+,TargetErrorList = [ '3706','3803','3807' ]
+,SourceTdpId = '{{ teradata_database }}'
+,SourceMaxSessions = 20
+,SourceUserName = '{{ teradata_user }}'
+,SourceUserPassword = '{{ teradata_password }}'
+,FileWriterFormat = 'Delimited'
+,FileWriterTextDelimiter = '{{ field_delimiter }}'
+,FileWriterPrivateLogName = 'test_log_name'
+,FileWriterOpenMode = 'Write'
+,ExportInstances = 1
+,FileWriterInstances = 1

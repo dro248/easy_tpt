@@ -1,0 +1,27 @@
+DEFINE JOB {{ job_name }}
+DESCRIPTION 'Pull {{ job_name }}'
+(
+   STEP EXPORT_THE_DATA
+   (
+      APPLY TO OPERATOR ($FILE_WRITER()
+        ATTR
+        (
+           AccessModuleName = 'libs3axsmod.so',
+           AccessModuleInitStr = 'S3Bucket={{ s3_bucket }}
+                                  S3Prefix={{ s3_filepath }}
+                                  S3Object={{ s3_filename }}
+                                  S3AccessID={{ aws_access_key_id }}
+                                  S3AccessKey={{ aws_secret_access_key }}
+                                  S3Region={{ s3_region }}
+                                  S3DontSplitRows={{ s3_dont_split_rows }}
+                                  S3SinglePartFile={{ write_to_single_file }}'
+        )
+      )
+      SELECT * FROM OPERATOR ($SELECTOR()
+         ATTR
+         (
+            SelectStmt = '{{ sql }}'
+         )
+      );
+   );
+);
