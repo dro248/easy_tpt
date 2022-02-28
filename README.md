@@ -54,7 +54,7 @@ To begin an EasyTPT export to S3:
 ### Parameter Descriptions
 The following table will help you fill in the appropriate arguments:
 
-| Cloud Storage | Value                   | Required? | Description                                                                                   |
+| Cloud Storage | Value                   | Required? | Description                                                                                  |
 |:-------------:|-------------------------|:---------:|----------------------------------------------------------------------------------------------|
 |     both      | `CLOUD_STORAGE`         |    Yes    | Specifies the type of your cloud storage provider                                            |
 |     both      | `JOB_NAME`              |    Yes    | A unique name containing alphanumeric characters and no spaces (use underscores)             |
@@ -66,7 +66,7 @@ The following table will help you fill in the appropriate arguments:
 |      S3       | `S3_FILENAME`           |    Yes    | Ex: 'sales_2021.csv' (uncompressed) or 'sales_2021.csv.gz' (files gzipped individually)      |
 |      S3       | `S3_DONT_SPLIT_ROWS`    |    No     | (Default: `True`) Lets TPT know if it can split files in the middle of a record. (True = no) |
 |     both      | `WRITE_TO_SINGLE_FILE`  |    No     | (Default: `False`) Lets TPT know if it can write to multiple files. (False = yes)            |
-|     both      | `SQL`                   |    Yes    | The full text of your SQL as a string (\**see note below)                                     |
+|     both      | `SQL`                   |    Yes    | The full text of your SQL as a string (\**see note below)                                    |
 |     both      | `TERADATA_DATABASE`     |    Yes    |                                                                                              |
 |     both      | `TERADATA_USER`         |    Yes    |                                                                                              |
 |     both      | `TERADATA_PASSWORD`     |    Yes    |                                                                                              |
