@@ -1,0 +1,28 @@
+DEFINE JOB {{ job_name }}
+DESCRIPTION '{{ job_name }}'
+(
+   STEP EXPORT_THE_DATA
+   (
+      APPLY TO OPERATOR ($FILE_WRITER()
+        ATTR
+         (
+               AccessModuleName = 'libazureaxsmod.so',
+               AccessModuleInitStr = '-Container {{ container_name }}
+                                      -Prefix "{{ file_prefix }}"
+                                      -Object {{ filename }}
+                                      -SinglePartFile {{ write_to_single_file }}
+                                      -DontSplitRows {{ dont_split_rows }}
+                                      -PartsPerFile 20
+                                      -BufferSize 100M
+                                      -ConfigDir {{ creds_dir }}
+                                      -Tracelevel 2'
+         )
+      )
+      SELECT * FROM OPERATOR ($SELECTOR()
+         ATTR
+         (
+            SelectStmt = '{{ sql }}'
+         )
+      );
+   );
+);
