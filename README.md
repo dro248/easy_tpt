@@ -28,9 +28,14 @@ TPT with your cloud storage credentials (along with some other arguments).
 > Note: From a data engineering perspective, this is a really nice feature, especially if the results is
 > larger than you expected. No more worrying about disk space! 😅
 
-### Supported Cloud Storage:
-- [x] S3
-- [ ] Azure Blob Storage (coming soon!)
+### Supported Clouds
+Teradata supports exporting directly to several major backends. EasyTPT has been implemented
+for the following:
+- [x] AWS S3
+- [x] Azure Blob Storage
+- [ ] Google Cloud Platform
+- [ ] Kafka
+- [ ] and others!
 
 
 ## Usage
