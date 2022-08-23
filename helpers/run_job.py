@@ -105,7 +105,7 @@ def fill_s3_job_template(
     write_to_single_file: bool,
     sql: str,
     job_template_path: str,
-    s3_max_object_size: str = "100m",
+    s3_max_object_size: str = "100M",
 ) -> str:
     """
     Fills the `job_template.jinja` template with the values filled in.
