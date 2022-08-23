@@ -105,6 +105,7 @@ def fill_s3_job_template(
     write_to_single_file: bool,
     sql: str,
     job_template_path: str,
+    s3_max_object_size: str = "100m",
 ) -> str:
     """
     Fills the `job_template.jinja` template with the values filled in.
@@ -119,6 +120,7 @@ def fill_s3_job_template(
         s3_filename:
         s3_dont_split_rows:
         write_to_single_file:
+        s3_max_object_size:
         sql:
         job_template_path: the path to the job jinja file
 
@@ -160,6 +162,7 @@ def fill_s3_job_template(
                 s3_region=s3_region,
                 s3_dont_split_rows=s3_dont_split_rows,
                 write_to_single_file=write_to_single_file,
+                s3_max_object_size=s3_max_object_size,
                 # When putting SQL into a TPT script, single quotes must be replaced with 2-single quotes
                 sql=sql.replace("\n", " \n").replace("'", "''"),
             )
