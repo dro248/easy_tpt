@@ -14,6 +14,7 @@ DESCRIPTION 'Pull {{ job_name }}'
                                   S3AccessKey={{ aws_secret_access_key }}
                                   S3Region={{ s3_region }}
                                   S3DontSplitRows={{ s3_dont_split_rows }}
+                                  S3MaxObjectSize={{ s3_max_object_size }}
                                   S3SinglePartFile={{ write_to_single_file }}'
         )
       )
