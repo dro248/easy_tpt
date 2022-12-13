@@ -381,4 +381,6 @@ if __name__ == "__main__":
     compile_job()
 
     # Run job
-    subprocess.run("tbuild -f job.tpt -v teradata_creds.tpt".split())
+    #subprocess.run("tbuild -f job.tpt -v teradata_creds.tpt".split())
+    subprocess.run("tbuild -f job.tpt -v teradata_creds.tpt -e UTF8".split())
+
