@@ -380,7 +380,6 @@ if __name__ == "__main__":
     # Compile job
     compile_job()
 
-    # Run job
+    # Run job and check for exit code
     #subprocess.run("tbuild -f job.tpt -v teradata_creds.tpt".split())
-    subprocess.run("tbuild -f job.tpt -v teradata_creds.tpt -e UTF8".split())
-
+    subprocess.run("tbuild -f job.tpt -v teradata_creds.tpt -e UTF8".split(), check=True)
