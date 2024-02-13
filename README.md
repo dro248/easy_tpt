@@ -28,10 +28,6 @@ TPT with your cloud storage credentials (along with some other arguments).
 > Note: From a data engineering perspective, this is a really nice feature, especially if the results is
 > larger than you expected. No more worrying about disk space! 😅
 
-> **Warning**: Be sure that EasyTPT is run from a server/cluster with a fast connection to your Teradata instance!
-> While data will be written to your cloud storage, we've found that in practice, running EasyTPT via a slow VPN connection
-> can *dramatically* slow the export process.
-
 ### Supported Clouds
 Teradata supports exporting directly to several major backends. EasyTPT has been implemented
 for the following:
@@ -195,6 +191,11 @@ FROM CUSTOMERS;
 ### Warning: TPT doesn't add column headers to your CSVs.
 Unfortunately, TPT does not have a setting to enable this. On the bright side, you have the SELECT statement that
 generated it, so you already know the name and order of everything, right? 🤦
+
+### Warning: Make sure EasyTPT has a fast connection to Teradata
+While exported data will be written to your cloud storage, we've found that in practice, running EasyTPT via a slow VPN connection
+can *dramatically* slow the export process. To ensure a good/timely user experience, make sure that EasyTPT is running from a 
+server/cluster with a fast connection to your Teradata instance.
 
 ### Q: I am getting a "name not in HOSTS file or names database" message. What does that mean?   
 A: For security purposes, Teradata gives database admins the ability to block access / TPT usage from 
