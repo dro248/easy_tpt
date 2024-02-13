@@ -165,7 +165,7 @@ KubernetesPodOperator(
 TPT has some sharp edges that you should know about. A few of them are listed below.
 
 ### Warning: Do not use Single-Line Comments.
-Behind the scenes, TPT strips newlines characters from your SQL query, effectively it all on a single line. 
+Behind the scenes, TPT strips newlines characters from your SQL query, effectively putting it all on a single line. 
 You can see how a single-line comment embedded somewhere in the middle of your query could wreak havoc.
 
 **Solution:** _Convert your single-line comments to multi-line comments._
