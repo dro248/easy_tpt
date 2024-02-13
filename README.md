@@ -28,6 +28,10 @@ TPT with your cloud storage credentials (along with some other arguments).
 > Note: From a data engineering perspective, this is a really nice feature, especially if the results is
 > larger than you expected. No more worrying about disk space! 😅
 
+> **Warning**: Be sure that EasyTPT is run from a server/cluster with a fast connection to your Teradata instance!
+> While data will be written to your cloud storage, we've found that in practice, running EasyTPT via a slow VPN connection
+> can *dramatically* slow the export process.
+
 ### Supported Clouds
 Teradata supports exporting directly to several major backends. EasyTPT has been implemented
 for the following:
